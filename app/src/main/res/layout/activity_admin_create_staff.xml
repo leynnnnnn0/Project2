@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.AdminCreateStaffActivity">
+
+
+    <LinearLayout
+        style="@style/PageLinear">
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:background="#f1f1f1"
+                android:layout_marginEnd="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                style="@style/H1"
+                android:layout_weight="1"
+                android:text="Create Staff"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            style="@style/Label"
+            android:text="First Name"/>
+
+        <EditText
+            android:id="@+id/firstName"
+            style="@style/EditText"
+            />
+
+
+        <TextView
+            style="@style/Label"
+            android:text="Last Name"/>
+
+        <EditText
+            android:id="@+id/lastName"
+            style="@style/EditText"
+            />
+
+
+        <TextView
+            style="@style/Label"
+            android:text="Phone Number"/>
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            style="@style/EditText"
+            />
+
+
+        <TextView
+            style="@style/Label"
+            android:text="Email"/>
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/EditText"
+            />
+
+        <LinearLayout style="@style/Space"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save"
+            style="@style/PrimaryButton"
+            android:layout_marginVertical="10dp"
+            android:text="Save"/>
+
+
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

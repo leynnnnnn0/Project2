@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customer.CustomerCartFragment">
+
+    <LinearLayout
+        style="@style/PageLinear">
+
+    <TextView
+        style="@style/H1"
+        android:text="My Cart"
+        />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/H2"
+                android:text="Total Amount:"
+                android:layout_weight="1"
+                />
+
+            <TextView
+                android:id="@+id/totalAmount"
+                style="@style/H2"
+                android:text="Placeholder"
+                />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+           style="@style/PrimaryButton"
+            android:text="Place Order"/>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.AdminSettingsFragment">
+
+    <LinearLayout
+        style="@style/PageLinear">
+
+        <TextView
+            style="@style/H1"
+            android:layout_marginBottom="10dp"
+            android:text="Settings"
+            />
+
+
+
+        <TextView
+            style="@style/Label"
+            android:text="First Name"/>
+
+        <EditText
+            android:id="@+id/firstName"
+            style="@style/EditText"
+          />
+
+
+        <TextView
+            style="@style/Label"
+            android:text="Last Name"/>
+
+        <EditText
+            android:id="@+id/lastName"
+            style="@style/EditText"
+            />
+
+
+        <TextView
+            style="@style/Label"
+            android:text="Phone Number"/>
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            style="@style/EditText"
+            />
+
+
+        <TextView
+            style="@style/Label"
+            android:text="Email"/>
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/EditText"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save"
+            style="@style/PrimaryButton"
+            android:layout_marginVertical="10dp"
+            android:text="Save"/>
+
+        <TextView
+            style="@style/Label"
+            android:text="Current Password"/>
+
+        <EditText
+            android:id="@+id/currentPassword"
+            style="@style/EditText"
+            />
+
+        <TextView
+            style="@style/Label"
+            android:text="New Password"/>
+
+        <EditText
+            android:id="@+id/newPassword"
+            style="@style/EditText"
+            />
+
+        <TextView
+            style="@style/Label"
+            android:text="Confirm Password"/>
+
+        <EditText
+            android:id="@+id/confirmPassword"
+            style="@style/EditText"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updatePassword"
+            style="@style/PrimaryButton"
+            android:layout_marginVertical="10dp"
+            android:text="Update Password"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>

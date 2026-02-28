@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#F1F1F1"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/fragment_container">
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/dashboard"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_home" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/cart"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_cart" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_menu" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/order"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_order" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/sales"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_money" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/staff"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_staff" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/customer"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_customer" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/favorite"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_favorite" />
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/settings"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_settings" />
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
