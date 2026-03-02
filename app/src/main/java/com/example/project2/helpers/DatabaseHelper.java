@@ -65,8 +65,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS users");
         db.execSQL("DROP TABLE IF EXISTS menu");
         onCreate(db);
-
-
     }
 
     //======================CREATE=========================
