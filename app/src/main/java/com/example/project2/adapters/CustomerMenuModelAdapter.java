@@ -38,7 +38,7 @@ public class CustomerMenuModelAdapter extends RecyclerView.Adapter<CustomerMenuM
     public void onBindViewHolder(@NonNull CustomerMenuModelAdapter.MenuModelViewModel holder, int position) {
        MenuModel model = arrayList.get(position);
        holder.name.setText(model.name);
-       holder.price.setText(model.price);
+       holder.price.setText("P " +model.price);
        holder.box.setOnClickListener(v -> {
            NavHelper.navigate(context, AdminShowMenuActivity.class, 1);
        });

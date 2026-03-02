@@ -72,7 +72,7 @@ public class AdminMenuFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         ArrayList<MenuModel> model = new ArrayList<>();
-        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
+//        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
         MenuModelAdapter adapter = new MenuModelAdapter(getContext(), model);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);

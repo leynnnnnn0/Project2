@@ -74,6 +74,14 @@
             android:id="@+id/email"
             style="@style/EditText"
             />
+        <TextView
+            style="@style/Label"
+            android:text="Password"/>
+
+        <EditText
+            android:id="@+id/password"
+            style="@style/EditText"
+            />
 
         <LinearLayout style="@style/Space"/>
 

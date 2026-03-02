@@ -73,9 +73,9 @@ public class CustomerDashboardFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         ArrayList<MenuModel> model = new ArrayList<>();
-        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
-        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
-        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
+//        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
+//        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
+//        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
         CustomerMenuModelAdapter adapter = new CustomerMenuModelAdapter(getContext(), model);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true));
         recyclerView.setAdapter(adapter);

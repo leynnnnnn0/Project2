@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String dbName = "project2.db";
 
     public DatabaseHelper(@Nullable Context context){
-        super(context, dbName, null, 1);
+        super(context, dbName, null, 10);
     }
 
     @Override
@@ -28,10 +28,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "role TEXT, " +
                 "created_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
 
+        db.execSQL("CREATE TABLE menu("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "image_path TEXT, " +
+                "name TEXT, " +
+                "description TEXT," +
+                "price REAL, " +
+                "quantity INTEGER, " +
+                "created_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
+
+                ContentValues cvAdmin = new ContentValues();
+                cvAdmin.put("fullname", "Admin Doe");
+                cvAdmin.put("email", "admin@gmail.com");
+                cvAdmin.put("password", "admin123");
+                cvAdmin.put("role", "admin");
+                db.insert("users", null, cvAdmin);
+
+                ContentValues cvStaff = new ContentValues();
+                cvAdmin.put("fullname", "Staff Doe");
+                cvAdmin.put("email", "staff@gmail.com");
+                cvAdmin.put("password", "staff123");
+                cvAdmin.put("role", "staff");
+                db.insert("users", null, cvStaff);
+
+                ContentValues cvCustomer = new ContentValues();
+                cvAdmin.put("fullname", "Customer Doe");
+                cvAdmin.put("email", "customer@gmail.com");
+                cvAdmin.put("password", "customer123");
+                cvAdmin.put("role", "customer");
+                db.insert("users", null, cvCustomer);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS users");
+        db.execSQL("DROP TABLE IF EXISTS menu");
+        onCreate(db);
+
 
     }
 
