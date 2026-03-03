@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.project2.admin.AdminDashboardFragment;
+import com.example.project2.customer.CustomerDashboardFragment;
 import com.example.project2.databinding.ActivityLoginBinding;
 import com.example.project2.helpers.DatabaseHelper;
 import com.example.project2.helpers.NavHelper;
@@ -42,11 +45,19 @@ public class LoginActivity extends AppCompatActivity {
                         cursor.getInt(0),
                         cursor.getString(1),
                         cursor.getString(2),
-                        cursor.getString(4),
-                        cursor.getString(5)
+                        cursor.getString(3),
+                        cursor.getString(4)
                 );
 
                 SessionHelper.setUser(this, user);
+
+                Log.d("CHECK ROLE", "ROlE: " + user.role);
+
+                if (user.role.equals("customer")){
+                    NavHelper.navigate(this, MainActivity.class);
+                } else if (user.role.equals("staff") ||user.role.equals("admin")) {
+                    NavHelper.navigate(this, MainActivity.class);
+                }
 
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
             } else Toast.makeText(this, "Wrong credentials failed to login!", Toast.LENGTH_SHORT).show();

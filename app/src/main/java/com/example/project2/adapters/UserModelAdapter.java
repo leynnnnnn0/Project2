@@ -37,7 +37,7 @@ public class UserModelAdapter extends RecyclerView.Adapter<UserModelAdapter.User
     @Override
     public void onBindViewHolder(@NonNull UserModelAdapter.UserModelViewModel holder, int position) {
        UserModel model = arrayList.get(position);
-       holder.firstName.setText(model.firstName);
+       holder.firstName.setText(model.fullname);
        holder.email.setText(model.email);
        holder.box.setOnClickListener(v -> {
            NavHelper.navigate(context, AdminShowStaffActivity.class, 1);

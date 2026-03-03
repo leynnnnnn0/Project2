@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String dbName = "project2.db";
 
     public DatabaseHelper(@Nullable Context context){
-        super(context, dbName, null, 10);
+        super(context, dbName, null, 11);
     }
 
     @Override
@@ -45,17 +45,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.insert("users", null, cvAdmin);
 
                 ContentValues cvStaff = new ContentValues();
-                cvAdmin.put("fullname", "Staff Doe");
-                cvAdmin.put("email", "staff@gmail.com");
-                cvAdmin.put("password", "staff123");
-                cvAdmin.put("role", "staff");
+        cvStaff.put("fullname", "Staff Doe");
+        cvStaff.put("email", "staff@gmail.com");
+        cvStaff.put("password", "staff123");
+        cvStaff.put("role", "staff");
                 db.insert("users", null, cvStaff);
 
                 ContentValues cvCustomer = new ContentValues();
-                cvAdmin.put("fullname", "Customer Doe");
-                cvAdmin.put("email", "customer@gmail.com");
-                cvAdmin.put("password", "customer123");
-                cvAdmin.put("role", "customer");
+        cvCustomer.put("fullname", "Customer Doe");
+        cvCustomer.put("email", "customer@gmail.com");
+        cvCustomer.put("password", "customer123");
+        cvCustomer.put("role", "customer");
                 db.insert("users", null, cvCustomer);
 
     }
