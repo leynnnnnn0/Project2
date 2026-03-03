@@ -6,6 +6,8 @@ public class MenuModel {
     public double price;
     public int id, quantity;
 
+    public MenuModel(){}
+
     public MenuModel(int id,String image_path, String name, String description, double price, int quantity) {
         this.id = id;
         this.image_path = image_path;
@@ -22,5 +24,11 @@ public class MenuModel {
         this.price = price;
     }
 
-
+    public MenuModel(int id, String image_path, String name, String description, double price) {
+        this.id = id;
+        this.image_path = image_path;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
 }

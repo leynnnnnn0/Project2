@@ -50,8 +50,12 @@ public class LoginActivity extends AppCompatActivity {
                 );
 
                 SessionHelper.setUser(this, user);
+                try {
 
-                Log.d("CHECK ROLE", "ROlE: " + user.role);
+                    Log.d("CHECK ROLE", "ROlE: " + SessionHelper.getUser(this).toString());
+                }catch (Exception e){
+                    Log.d("info_error", e.getMessage());
+                }
 
                 if (user.role.equals("customer")){
                     NavHelper.navigate(this, MainActivity.class);

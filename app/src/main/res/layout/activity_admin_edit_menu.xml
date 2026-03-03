@@ -39,7 +39,7 @@
 
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
@@ -68,7 +68,7 @@
 
         <TextView
             style="@style/Label"
-            android:text="Name"/>
+            android:text="Price"/>
 
         <EditText
             android:id="@+id/price"
