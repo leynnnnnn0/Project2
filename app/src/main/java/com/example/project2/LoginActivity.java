@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 SessionHelper.setUser(this, user);
                 try {
-
                     Log.d("CHECK ROLE", "ROlE: " + SessionHelper.getUser(this).toString());
                 }catch (Exception e){
                     Log.d("info_error", e.getMessage());

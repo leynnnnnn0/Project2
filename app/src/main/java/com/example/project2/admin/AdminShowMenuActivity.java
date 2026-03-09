@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.example.project2.R;
+
 import com.example.project2.databinding.ActivityAdminShowMenuBinding;
 import com.example.project2.helpers.DatabaseHelper;
 import com.example.project2.helpers.NavHelper;
@@ -25,11 +26,13 @@ public class AdminShowMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
         binding = ActivityAdminShowMenuBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
 
         id = getIntent().getIntExtra("id", -1);
+
 
         binding.edit.setOnClickListener(v -> NavHelper.navigate(this, AdminEditMenuActivity.class, 1));
 
@@ -59,7 +62,7 @@ public class AdminShowMenuActivity extends AppCompatActivity {
         SQLiteDatabase db = new DatabaseHelper(getApplicationContext()).getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT id, image_path, name, description, price FROM menu WHERE id = " + id, null);
 
-        if (cursor.moveToNext()) {
+        if (cursor.moveToFirst()) {
             return new MenuModel(
                     cursor.getInt(0),
                     cursor.getString(1),

@@ -40,6 +40,7 @@ public class MenuModelAdapter extends RecyclerView.Adapter<MenuModelAdapter.Menu
     @Override
     public void onBindViewHolder(@NonNull MenuModelAdapter.MenuModelViewModel holder, int position) {
        MenuModel model = arrayList.get(position);
+
        holder.binding.name.setText(model.name);
        holder.binding.price.setText("P " + model.price);
         holder.binding.image.setImageURI(Uri.parse(model.image_path));

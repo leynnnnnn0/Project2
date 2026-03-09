@@ -25,7 +25,8 @@ import com.example.project2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ActivityMainBinding binding;
-    String role = "admin";
+    String role = "customer";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,8 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view.getId() == R.id.dashboard && role.equalsIgnoreCase("customer")){
             loadFragment(new CustomerDashboardFragment());
         }
-
-
 
 
     }

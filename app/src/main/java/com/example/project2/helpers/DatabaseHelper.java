@@ -10,12 +10,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.project2.models.MenuModel;
+import com.example.project2.models.UserModel;
+
+import java.util.ArrayList;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String dbName = "project2.db";
 
     public DatabaseHelper(@Nullable Context context){
-        super(context, dbName, null, 11);
+        super(context, dbName, null, 12);
     }
 
     @Override
@@ -37,6 +42,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "quantity INTEGER, " +
                 "created_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
 
+        db.execSQL("CREATE TABLE cart ("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "userId INTEGER, " +
+                "menuId INTEGER, " +
+                "quantity INTEGER, " +
+                "FOREIGN KEY (userId) REFERENCES users (id)," +
+                "FOREIGN KEY (menuId) REFERENCES menu (id))");
+
                 ContentValues cvAdmin = new ContentValues();
                 cvAdmin.put("fullname", "Admin Doe");
                 cvAdmin.put("email", "admin@gmail.com");
@@ -45,17 +58,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.insert("users", null, cvAdmin);
 
                 ContentValues cvStaff = new ContentValues();
-        cvStaff.put("fullname", "Staff Doe");
-        cvStaff.put("email", "staff@gmail.com");
-        cvStaff.put("password", "staff123");
-        cvStaff.put("role", "staff");
+                cvStaff.put("fullname", "Staff Doe");
+                cvStaff.put("email", "staff@gmail.com");
+                cvStaff.put("password", "staff123");
+                cvStaff.put("role", "staff");
                 db.insert("users", null, cvStaff);
 
                 ContentValues cvCustomer = new ContentValues();
-        cvCustomer.put("fullname", "Customer Doe");
-        cvCustomer.put("email", "customer@gmail.com");
-        cvCustomer.put("password", "customer123");
-        cvCustomer.put("role", "customer");
+                cvCustomer.put("fullname", "Customer Doe");
+                cvCustomer.put("email", "customer@gmail.com");
+                cvCustomer.put("password", "customer123");
+                cvCustomer.put("role", "customer");
                 db.insert("users", null, cvCustomer);
 
     }
@@ -64,6 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS users");
         db.execSQL("DROP TABLE IF EXISTS menu");
+        db.execSQL("DROP TABLE IF EXISTS cart");
         onCreate(db);
     }
 
@@ -92,6 +106,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return cursor.moveToFirst();
 
+    }
+
+    public ArrayList<MenuModel> showMenu(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<MenuModel>  menuModel = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT id, image_path, name, price FROM menu", null);
+
+        while (cursor.moveToNext()){
+             MenuModel menu = new MenuModel(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getDouble(3)
+            );
+            menuModel.add(menu);
+        }
+        return menuModel;
     }
 
     public int validateUser(String email, String password){

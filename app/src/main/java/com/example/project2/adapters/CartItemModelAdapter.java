@@ -41,7 +41,6 @@ public class CartItemModelAdapter extends RecyclerView.Adapter<CartItemModelAdap
        holder.quantity.setText(String.valueOf(model.quantity));
 
 
-
     }
 
     @Override

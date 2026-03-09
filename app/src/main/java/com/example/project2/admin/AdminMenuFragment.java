@@ -1,5 +1,7 @@
 package com.example.project2.admin;
 
+import static com.example.project2.helpers.SessionHelper.getUser;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -14,12 +16,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.example.project2.MainActivity;
 import com.example.project2.R;
 import com.example.project2.adapters.MenuModelAdapter;
 import com.example.project2.helpers.DatabaseHelper;
 import com.example.project2.helpers.NavHelper;
+import com.example.project2.helpers.SessionHelper;
 import com.example.project2.models.MenuModel;
 import com.example.project2.databinding.FragmentAdminMenuBinding;
+import com.example.project2.models.UserModel;
 
 import java.util.ArrayList;
 
@@ -30,6 +35,7 @@ public class AdminMenuFragment extends Fragment {
     MenuModelAdapter adapter;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,13 +43,13 @@ public class AdminMenuFragment extends Fragment {
 
         RecyclerView recyclerView = binding.recyclerView;
         ArrayList<MenuModel> model = getMenu();
-//        model.add(new MenuModel(1, "Chicken Adobo", "$150.00"));
         adapter = new MenuModelAdapter(getContext(), model);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
-        ImageButton add = binding.add;
-        add.setOnClickListener(v -> NavHelper.navigate(this.getContext(), AdminCreateMenuActivity.class));
+
+        binding.add.setOnClickListener(v -> NavHelper.navigate(this.getContext(), AdminCreateMenuActivity.class));
+
         return binding.getRoot();
     }
 
